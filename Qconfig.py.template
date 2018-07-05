@@ -1,0 +1,28 @@
+# Before you can use the jobs API, you need to set up an access token.
+# Log in to the Quantum Experience. Under "Account", generate a personal
+# access token. Replace "None" below with the quoted token string
+# or set an environment variable "IBMQE_API" or "QCONSOLE_TOKEN".
+
+import os
+
+APItoken = {}
+token = os.getenv('QCONSOLE_TOKEN', None)
+if token:
+    APItoken['qconsole'] = token
+token = os.getenv('IBMQE_API', token)
+if token:
+    APItoken['qx'] = token
+if len(APItoken) == 0:
+  raise RuntimeError("Please set up your access token. See Qconfig.py.")
+
+config = {}
+config['qconsole'] = {
+  'url': '',
+  'hub': '',
+  'group': '',
+  'project': ''
+}
+config['qx'] = {
+  'url': 'https://quantumexperience.ng.bluemix.net/api'
+}
+
