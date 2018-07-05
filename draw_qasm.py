@@ -1,13 +1,18 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# Copyright 2017, IBM.
+# Copyright 2018, IBM.
 #
 # This source code is licensed under the Apache License, Version 2.0 found in
 # the LICENSE.txt file in the root directory of this source tree.
 
 '''
-Draw a QASM circuit based on matplotlib_circuit_drawer
+Draw a QASM circuit based on matplotlib_circuit_drawer.
+Requires qiskit-terra 0.5.5 or later.
+
+Examples:
+  $ python draw_qasm.py --qasm tmp.qasm --out tmp.pdf  # default style
+  $ python draw_qasm.py --qasm tmp.qasm --out tmp.pdf --style composer.json  # QX composer style
 '''
 
 import json

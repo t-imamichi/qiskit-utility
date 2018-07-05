@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# Copyright 2017, IBM.
+# Copyright 2018, IBM.
 #
 # This source code is licensed under the Apache License, Version 2.0 found in
 # the LICENSE.txt file in the root directory of this source tree.
@@ -9,9 +9,8 @@
 '''
 This tool submits a QASM file to any backend and show the result.
 It requires 'Qconfig.py' to set a token of IBM Quantum Experience.
-It supports the following backends in this version:
-  ibmqx2(5 qubits), ibmqx4(5 qubits), ibmqx5(16 qubits),
-  simulator(20 qubits), ibmqx_hpc_qasm_simulator(32 qubits).
+It supports the following backends:
+  ibmqx2(5 qubits), ibmqx4(5 qubits), ibmqx5(16 qubits), simulator(32 qubits).
 see https://quantumexperience.ng.bluemix.net/qx/devices for more details of the backends.
 
 Examples:
@@ -21,6 +20,7 @@ Examples:
   $ python run_qasm.py -j (job id)     # show the result of a job
   $ python run_qasm.py -q (qasm file)  # submit a qasm file
   $ python run_qasm.py -z -l 10        # show job list (10 jobs) of qconsole
+  $ python run_qasm.py -z -d ibmq_20_tokyo -q (qasm file)  # submit a qasm file to ibmq_20_tokyo
 '''
 
 import json
