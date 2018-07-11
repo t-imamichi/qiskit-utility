@@ -26,12 +26,12 @@ from qiskit.tools.visualization._circuit_visualization import MatplotlibDrawer
 
 def options():
     parser = ArgumentParser()
-    parser.add_argument('--qasm', action='store', help='input QASM file')
-    parser.add_argument('--style', action='store', help='style file')
-    parser.add_argument('--scale', action='store', help='scaling factor', type=float, default=1.0)
-    parser.add_argument('--out', action='store', help='output figure file (pdf, png or svg)')
-    parser.add_argument('--json', action='store', help='output JSON file of AST')
-    parser.add_argument('--verbose', action='store_true', help='verbose')
+    parser.add_argument('-q', '--qasm', action='store', help='input QASM file')
+    parser.add_argument('-s', '--style', action='store', help='style file')
+    parser.add_argument('--scale', action='store', help='scaling factor', type=float, default=0.7)
+    parser.add_argument('-o', '--out', action='store', help='output figure file (pdf, png or svg)')
+    parser.add_argument('-j', '--json', action='store', help='output JSON file of AST')
+    parser.add_argument('-v', '--verbose', action='store_true', help='verbose')
     args = parser.parse_args()
     if args.verbose:
         print('options:', args)
