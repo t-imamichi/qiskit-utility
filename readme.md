@@ -15,3 +15,7 @@ To use qconsole, it is necessary to fill `config['qconsole']` as well.
 
   Draw a circuit to pdf, svg or png file.
 
+- qasm2qobj.py
+
+  Convert a OpenQASM file to QObj file.
+

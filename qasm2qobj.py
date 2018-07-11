@@ -38,6 +38,7 @@ def options():
     parser = ArgumentParser()
     parser.add_argument('-i', '--qasm', action='store', help='input QASM file')
     parser.add_argument('-o', '--qobj', action='store', help='output QOBJ file')
+    parser.add_argument('-s', '--shots', action='store', help='number of shots', type=int, default=1024)
     parser.add_argument('--out-qasm', action='store', help='output QASM file')
     parser.add_argument('-b', '--backend', action='store', help='backend (default: local_qasm_simulator)',
                         default='local_qasm_simulator')
@@ -65,7 +66,7 @@ def support_npint(val):
 def main():
     args = options()
     circuit = load_qasm_file(args.qasm, name=args.qasm)
-    qobj = compile(circuit, backend=args.backend)
+    qobj = compile(circuit, backend=args.backend, shots=args.shots)
     with open(args.qobj, 'w') as outfile:
         json.dump(qobj, outfile, indent=2, sort_keys=True, default=support_npint)
     if args.out_qasm:
