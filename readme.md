@@ -1,6 +1,9 @@
-# Utility scripts for QISKit
+# Utility scripts for Qiskit
 
 ## Setup
+
+To install qiskit, see my unofficial instruction.
+  - https://github.com/t-imamichi/qiskit-utility/wiki/Unofficial-installation-guide-of-qiskit
 
 Copy `Qconfig.py.template` to `Qconfig.py` and fill token or set the environment variable.
 To use qconsole, it is necessary to fill `config['qconsole']` as well.
